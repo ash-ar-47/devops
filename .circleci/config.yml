@@ -1,4 +1,4 @@
-version: 2.1
+version: 2
 
 jobs:
   build:
@@ -9,16 +9,13 @@ jobs:
 
  
   steps:
-        #1 Obtain repo from Github
     - checkout
-    #2 Create a virtual environment and install dependencies
     - run:
         name: install dependencies
         command: |
           python3 -m venv venv
           . venv/bin/activate
           pip install -r requirements.txt
-    #3 Run coding convention software plus tester.
     - run:
       name: run tests
       command: |
